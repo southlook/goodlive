@@ -3,7 +3,7 @@ export function loadImageAsync(url) {
         const image = new Image();
         image.src = url;
         image.onload = function () {
-            resolve(url);
+            resolve(url);//成功将url返回
         };
         image.onerror = function () {
             reject(new Error('Could not load image at ' + url));

@@ -5,9 +5,9 @@ const url = require("url")//get类型数据传输需要引入一个url
 // const searchData = require("./data/search")
 const Mock = require("mockjs")//引入mock
 const Random = Mock.Random;
-/**
- * 首页热门数据
- */
+const detailsData = require("./data/details")//导入server details数据
+
+//首页热门数据1
 router.get("/home/hot1", (req, res) => {
     const cityName = url.parse(req.url, true).query.cityName
     console.log(cityName)
@@ -16,7 +16,7 @@ router.get("/home/hot1", (req, res) => {
         result: homehot.hot1
     })
 })
-
+//首页热门数据2
 router.get("/home/hot2", (req, res) => {
     const cityName = url.parse(req.url, true).query.cityName
     console.log(cityName)
@@ -44,6 +44,13 @@ router.get("/search", (req, res) => {
         status: 200,
         result: data
     })
+})
+
+//详情页
+router.get("/details", (req, res) => {
+    const id = url.parse(req.url, true).query.id
+    console.log(id);
+    res.send(detailsData)
 })
 
 module.exports = router;

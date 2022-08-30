@@ -5,7 +5,8 @@ const base = {
     cityUrl: "/api/aj/getcitycode", //有跨域需要解决 setupproxy
     homehot1: "/api/home/hot1",
     homehot2: "/api/home/hot2",
-    search: "/api/search"
+    search: "/api/search",
+    details: "/api/details"//详情页
 }
 //请求方法
 const api = {
@@ -29,7 +30,12 @@ const api = {
         return axios.get(base.baseUrl + base.search, {
             params
         })
-
+    },
+    //详情页
+    details(params) {
+        return axios.get(base.baseUrl + base.details, {
+            params
+        })
     }
 }
 export default api
