@@ -52,5 +52,19 @@ router.get("/details", (req, res) => {
     console.log(id);
     res.send(detailsData)
 })
-
+router.post("/login", (req, res) => {
+    const { username, password } = req.body;
+    if (username && password) {
+        res.send({
+            status: 200,
+            token: "enjaskldfhadskljasfdasf",
+            nick: username
+        })
+    } else {
+        res.setDefaultEncoding({
+            status: 400,
+            msg: '用户名或密码错误'
+        })
+    }
+})
 module.exports = router;

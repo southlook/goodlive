@@ -9,6 +9,7 @@ import BottomNav from "../components/BottomNav";
 import City from "../pages/City";
 import Search from "../pages/Search";
 import Details from "../pages/Details";
+import Login from "../pages/Login";
 const AppRouter = () => {
   return (
     <Router>
@@ -16,6 +17,7 @@ const AppRouter = () => {
         <Route path="/city" component={City}></Route>
         <Route path="/details/:id" component={Details}></Route>
         {/* 详情页  :id为路由传参*/}
+        <Route path="/login" component={Login}></Route>
         <Route path="/search/:keywords" component={Search}></Route>
         {/* 路由传参 */}
         <Layout path="/">

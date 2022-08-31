@@ -6,7 +6,8 @@ const base = {
     homehot1: "/api/home/hot1",
     homehot2: "/api/home/hot2",
     search: "/api/search",
-    details: "/api/details"//详情页
+    details: "/api/details",//详情页
+    login: "/api/login"
 }
 //请求方法
 const api = {
@@ -36,6 +37,10 @@ const api = {
         return axios.get(base.baseUrl + base.details, {
             params
         })
+    },
+    //登录
+    login(params) {
+        return axios.post(base.baseUrl + base.login, params)
     }
 }
 export default api

@@ -7,9 +7,12 @@ const SearchList = (props) => {
   const [hasMore, setHasMore] = useState(false);
   useEffect(() => {
     http();
+    return () => {
+      setSearchData([]); //卸载阶段
+      setHasMore(false); //清空a
+    };
   }, [props.search]);
   const loadMoreHandle = () => {
-    // console.log("需要加载数据");
     http();
   };
   const http = () => {
