@@ -10,7 +10,7 @@ const DetailsList = (props) => {
       })
       .then((res) => {
         if (res.status === 200) {
-          console.log(detailsData);
+          // console.log(detailsData);
           setDetailsData(res.data);
         }
       });
@@ -19,7 +19,7 @@ const DetailsList = (props) => {
     <div>
       {detailsData.imgs ? (
         //判断detailsData.img有无数据
-        <DetailsView detailsData={detailsData} />
+        <DetailsView detailsData={detailsData} id={props.id} />
       ) : (
         <div>等待数据加载</div>
       )}

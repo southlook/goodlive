@@ -1,10 +1,13 @@
 import React from "react";
 import BuyAndStoreView from "../BuyAndStoreView";
 import "./style.less";
-const BuyAndStore = () => {
+import { useSelector } from "react-redux"; //关联redux读取数据
+const BuyAndStore = (props) => {
+  const login = useSelector((state) => state.login);
+  const collects = useSelector((state) => state.collect);
   return (
     <div className="buy-and-store">
-      <BuyAndStoreView />
+      <BuyAndStoreView id={props.id} user={login.user} collects={collects} />
     </div>
   );
 };
