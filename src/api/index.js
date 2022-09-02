@@ -9,7 +9,8 @@ const base = {
     details: "/api/details",//详情页
     login: "/api/login",
     comment: "/api/comment",
-    commentOrder: "/api/order/comment"
+    commentOrder: "/api/order/comment",
+    submitComment: "/api/order/submit/comment"
 }
 //请求方法
 const api = {
@@ -55,6 +56,10 @@ const api = {
         return axios.get(base.baseUrl + base.commentOrder, {
             params
         })
+    },
+    //提交评价
+    submitComment(params) {
+        return axios.post(base.baseUrl + base.submitComment, params)
     }
 }
-export default api
+export default api;

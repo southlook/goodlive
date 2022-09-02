@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import api from "../../../api";
-import OrderlistView from "../OrderListView";
+import OrderListView from "../OrderListView";
 const OrderList = (props) => {
   const [orderListData, setOrderListData] = useState([]);
   useEffect(() => {
@@ -17,7 +17,11 @@ const OrderList = (props) => {
   }, []);
   return (
     <div>
-      {orderListData.length > 0 ? <OrderlistView /> : <div>等待数据加载</div>}
+      {orderListData.length > 0 ? (
+        <OrderListView data={orderListData} user={props.user} />
+      ) : (
+        <div>等待数据加载</div>
+      )}
     </div>
   );
 };

@@ -4,7 +4,7 @@ const OrderListView = (props) => {
   return (
     <div>
       {props.data.map((ele, index) => {
-        return <Item key={index} data={ele}></Item>;
+        return <Item user={props.user} key={index} data={ele}></Item>;
       })}
     </div>
   );

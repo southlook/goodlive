@@ -88,4 +88,13 @@ router.get("/order/comment", (req, res) => {
         result: orderCommentData
     })
 })
+//评价
+router.post("/order/submit/comment", (req, res) => {
+    const { username, id, content } = req.body
+    console.log(username, id, content);
+    res.send({
+        msg: "评价成功",
+        status: 200
+    })
+})
 module.exports = router;
