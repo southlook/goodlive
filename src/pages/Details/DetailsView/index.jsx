@@ -4,6 +4,7 @@ import Swiper from "../../../components/Swiper"; //焦点轮播图组件复用
 import "./style.less";
 import BuyAndStore from "../BuyAndStore";
 import Tabs from "../../../components/Tabs";
+import Comment from "../Comment";
 const DetailsViews = (props) => {
   let detailsData = props.detailsData;
   return (
@@ -45,13 +46,13 @@ const DetailsViews = (props) => {
                 </div>
               </div>
             </div>
+            <BuyAndStore id={props.id} />
           </div>
           <div label="评价">
-            <p>我是评价</p>
+            <Comment id={props.id} />
           </div>
         </Tabs>
       </div>
-      <BuyAndStore id={props.id} />
     </div>
   );
 };

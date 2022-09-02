@@ -10,6 +10,7 @@ import City from "../pages/City";
 import Search from "../pages/Search";
 import Details from "../pages/Details";
 import Login from "../pages/Login";
+import Order from "../pages/Order";
 const AppRouter = () => {
   return (
     <Router>
@@ -19,6 +20,7 @@ const AppRouter = () => {
         {/* 详情页  :id为路由传参*/}
         <Route path="/login" component={Login}></Route>
         <Route path="/search/:keywords" component={Search}></Route>
+        <Route path="/order" component={Order}></Route>
         {/* 路由传参 */}
         <Layout path="/">
           {/* layout为二级路由 */}

@@ -6,7 +6,9 @@ const url = require("url")//get类型数据传输需要引入一个url
 const Mock = require("mockjs")//引入mock
 const Random = Mock.Random;
 const detailsData = require("./data/details")//导入server details数据
-
+// const { resolveNaptr } = require("dns");
+const commentData = require("./data/comment")
+const orderCommentData = require("./data/order")
 //首页热门数据1
 router.get("/home/hot1", (req, res) => {
     const cityName = url.parse(req.url, true).query.cityName
@@ -52,6 +54,7 @@ router.get("/details", (req, res) => {
     console.log(id);
     res.send(detailsData)
 })
+//登录页面
 router.post("/login", (req, res) => {
     const { username, password } = req.body;
     if (username && password) {
@@ -66,5 +69,23 @@ router.post("/login", (req, res) => {
             msg: '用户名或密码错误'
         })
     }
+})
+//评价
+router.get("/comment", (req, res) => {
+    const id = url.parse(req.url).query.id;
+    console.log(id);
+    res.send({
+        status: 200,
+        result: commentData
+    })
+})
+//订单评价
+router.get("/order/comment", (req, res) => {
+    const username = url.parse(req.url, true).query.username;
+    console.log(username);
+    res.send({
+        status: 200,
+        result: orderCommentData
+    })
 })
 module.exports = router;

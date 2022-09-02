@@ -7,7 +7,9 @@ const base = {
     homehot2: "/api/home/hot2",
     search: "/api/search",
     details: "/api/details",//详情页
-    login: "/api/login"
+    login: "/api/login",
+    comment: "/api/comment",
+    commentOrder: "/api/order/comment"
 }
 //请求方法
 const api = {
@@ -41,6 +43,18 @@ const api = {
     //登录
     login(params) {
         return axios.post(base.baseUrl + base.login, params)
+    },
+    //商品评价
+    comment(params) {
+        return axios.get(base.baseUrl + base.comment, {
+            params
+        })
+    },
+    //评价
+    commentOrder(params) {
+        return axios.get(base.baseUrl + base.commentOrder, {
+            params
+        })
     }
 }
 export default api
